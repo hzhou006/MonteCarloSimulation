@@ -35,7 +35,7 @@ To test your results create an account with Personal Capital, add a manual portf
 -----------------------------------------------------------------------------------------------------------------------------------
 
 How to run:
-$mvn package
+$mvn test
 
 Get the testing result:
 Portfolio [Name=Aggressive, InitialInvestment=100000.0, Return=0.094324, Risk=0.15675, MedianOf20thYear=242114.86325234303, 10% Best=559835.5344529611, 10% Worst=102614.68956786046]
