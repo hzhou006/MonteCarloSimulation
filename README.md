@@ -19,14 +19,14 @@ Assumptions
 
 Solution Needed
 
-Portfolio Type                   Median 20th Year          10 % Best Case          10 % Worst Case
+Portfolio Type                      Median 20th Year              10 % Best Case               10 % Worst Case
 A - Aggressive 
 I - Very Conservative
  
 
 Description
-10% Best Case: 90th Percentile value among the 10,000 simulations
-10% Worst Case: 10th Percentile value among the 10,000 simulations.
+10% Best Case:90th Percentile value among the 10,000 simulations
+10% Worst Case:10th Percentile value among the 10,000 simulations.
  
 Hint
 To test your results create an account with Personal Capital, add a manual portfolio and go to Investment Checkup and compare your results.  
