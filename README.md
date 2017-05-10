@@ -7,6 +7,7 @@ A Real Time implementation of Modern Portfolio Theory is to build an optimal ass
 Portfolio Type                Return (Mean)                Risk ( Standard Deviation)
 Aggressive                      % 9.4324                         15.675
 Very Conservative               % 6.189                           6.3438
+
  
 We would now like to compare their performance against each other. We would like to know that if a user with $100,000 invested their money in either of them, how would the returns compare over the next 20 years. We would like to test their performance by using forward-looking Monte Carlo Simulations.
  
