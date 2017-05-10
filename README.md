@@ -16,15 +16,12 @@ Assumptions
 2. 20th Year future value should be inflation adjusted at the rate of 3.5% each year. Ie. Year 1 value of 103.5 is equivalent to 100        at Year 0.
 
 Solution Needed
-
-                               Median 20th Year        10 % Best Case          10 % Worst Case
+                             Median 20th Year        10 % Best Case          10 % Worst Case
 A - Aggressive 
 
 I - Very Conservative
  
- 
- 
- 
+
 Description
 10% Best Case                       :   90th Percentile value among the 10,000 simulations
 10% Worst Case                     :  10th Percentile value among the 10,000 simulations.
