@@ -59,7 +59,9 @@ public class Simulator {
 		for (Portfolio portfolio : portfolios) {
 			SimulatorState simulatorState = progress.get(portfolio);
 			portfolio.setSimulationMedian(simulatorState.getPercentile(50));
+			//10th Percentile value among the 10,000 simulations.
 			portfolio.setSimulationLast10(simulatorState.getPercentile(10));
+			// 90th Percentile value among the 10,000 simulations
 			portfolio.setSimulationTop10(simulatorState.getPercentile(90));
 		}
 	}
