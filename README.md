@@ -1,3 +1,4 @@
+
 Modern Portfolio Theory says that it is not enough to look at the expected risk and return of one particular stock. By investing in more than one stock, an investor can reap the benefits of diversification- chief among them, a reduction in the riskiness of the portfolio.
  
 A Real Time implementation of Modern Portfolio Theory is to build an optimal asset allocation of domestic stocks & bonds, international stock and bonds, alternatives and cash. Combining the risk & return of each asset class and correlations across them – we come up with the risk and return of the overall portfolio.  Two portfolios were created, one being extremely Conservative and one being Aggressive.
@@ -23,9 +24,11 @@ I - Very Conservative
  
 
 Description
-10% Best Case                       :   90th Percentile value among the 10,000 simulations
-10% Worst Case                     :  10th Percentile value among the 10,000 simulations.
+10% Best Case:   90th Percentile value among the 10,000 simulations
+10% Worst Case:  10th Percentile value among the 10,000 simulations.
  
 Hint
 To test your results create an account with Personal Capital, add a manual portfolio and go to Investment Checkup and compare your results.  
 
+How to run(Get the testing result):
+$mvn package
