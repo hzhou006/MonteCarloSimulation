@@ -13,13 +13,9 @@ This is a statistical technique that uses pseudo-random uniform variables for a 
  
 Assumptions
 1.     We would like to use a random number generator to ensure Gaussian distribution of random numbers that are generated.
- 
-2.     20th Year future value should be inflation adjusted at the rate of 3.5% each year. Ie. Year 1 value of 103.5 is equivalent to 100 at Year 0.
+2.     20th Year future value should be inflation adjusted at the rate of 3.5% each year. Ie. Year 1 value of 103.5 is equivalent to 100        at Year 0.
  
 Solution Needed
- 
-1.     Portfolio Inflation Adjusted Values from Simulation
- 
 
                                Median 20th Year        10 % Best Case          10 % Worst Case
 A - Aggressive 
