@@ -30,6 +30,8 @@ Description
 Hint
 To test your results create an account with Personal Capital, add a manual portfolio and go to Investment Checkup and compare your results.  
 
+-----------------------------------------------------------------------------------------------------------------------------------
+
 How to run:
 $mvn package
 
