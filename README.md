@@ -12,9 +12,9 @@ Monte Carlo Simulation:
 This is a statistical technique that uses pseudo-random uniform variables for a given statistical distribution based on past risk (SD) and return (mean) to predict outcomes over future time periods. Based on iterative evaluation of each random future value, we project the portfolio future value over 20 years. We would like to run 10,000 simulations of projecting 20 year value and come up with the following:
  
 Assumptions
-1.     We would like to use a random number generator to ensure Gaussian distribution of random numbers that are generated.
-2.     20th Year future value should be inflation adjusted at the rate of 3.5% each year. Ie. Year 1 value of 103.5 is equivalent to 100        at Year 0.
- 
+1. We would like to use a random number generator to ensure Gaussian distribution of random numbers that are generated.
+2. 20th Year future value should be inflation adjusted at the rate of 3.5% each year. Ie. Year 1 value of 103.5 is equivalent to 100        at Year 0.
+
 Solution Needed
 
                                Median 20th Year        10 % Best Case          10 % Worst Case
