@@ -14,7 +14,7 @@ public class Portfolio {
 	//simulated values
 	private double simulationMedian;
 	private double simulationTop10;
-	private double simulationBottom10;
+	private double simulationLast10;
 		
 	public Portfolio(String name, double initialInvestment, double mean, double standardDeviation) {
 		this.name=name;
@@ -71,12 +71,12 @@ public class Portfolio {
 		this.simulationTop10 = simulationTop10;
 	}
 
-	public double getSimulationBottom10() {
-		return simulationBottom10;
+	public double getSimulationLast10() {
+		return simulationLast10;
 	}
 
-	public void setSimulationBottom10(double simulationBottom10) {
-		this.simulationBottom10 = simulationBottom10;
+	public void setSimulationLast10(double simulationLast10) {
+		this.simulationLast10 = simulationLast10;
 	}
 
 	@Override
@@ -85,7 +85,7 @@ public class Portfolio {
 				+ initialInvestment + ", Return=" + mean + ", Risk="
 				+ standardDeviation + ", MedianOf20thYear=" + simulationMedian
 				+ ", 10% Best=" + simulationTop10
-				+ ", 10% Worst=" + simulationBottom10 + "]";
+				+ ", 10% Worst=" + simulationLast10 + "]";
 	}
 	
 }

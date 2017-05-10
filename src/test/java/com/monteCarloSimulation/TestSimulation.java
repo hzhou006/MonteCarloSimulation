@@ -13,8 +13,9 @@ public class TestSimulation {
 	public void testSimulation(){
 		Portfolio aggressive = new Portfolio("Aggressive", 100000, 0.094324, 0.15675);
 		Portfolio conservative = new Portfolio("Very Conservative", 100000, 0.06189, 0.063438);
+		Portfolio[] portfolios = new Portfolio[]{aggressive,conservative};
 
-		Simulator simulator = new Simulator(aggressive, conservative);
+		Simulator simulator = new Simulator(portfolios);
 		simulator.run();
 
 		System.out.println(aggressive);

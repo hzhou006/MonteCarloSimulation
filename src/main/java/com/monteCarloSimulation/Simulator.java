@@ -1,10 +1,10 @@
 package com.monteCarloSimulation;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import org.apache.commons.math3.distribution.NormalDistribution;
 import org.apache.commons.math3.stat.descriptive.DescriptiveStatistics;
+
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Running the simulation
@@ -20,14 +20,14 @@ public class Simulator {
 	private long simulations;
 	private int periods;
 
-	public Simulator(Portfolio... portfolios) {
+	public Simulator(Portfolio[] portfolios) {
 		this.portfolios = portfolios;
 		
 		//init progress
 		this.progress = new HashMap<Portfolio, Simulator.SimulatorState>(portfolios.length);
-		for(Portfolio p: portfolios){
-			SimulatorState simulatorState = new SimulatorState(p.getMean(),p.getStandardDeviation());
-			progress.put(p, simulatorState);
+		for(Portfolio portfolio: portfolios){
+			SimulatorState simulatorState = new SimulatorState(portfolio.getMean(), portfolio.getStandardDeviation());
+			progress.put(portfolio, simulatorState);
 		}
 
 		// defaults
@@ -38,55 +38,32 @@ public class Simulator {
 
 	public void run() {
 		for (int i = 0; i < simulations; i++) {
-			for (Portfolio p : portfolios) {
-				double simResult=p.getInitialInvestment();//starting value
+			for (Portfolio portfolio : portfolios) {
+				double simResult=portfolio.getInitialInvestment();//starting value
 				for(int j=0;j<periods;j++){
 					//get next random sample return for the portfolio
-					double r = progress.get(p).nextSampleReturn();
+					double ret = progress.get(portfolio).nextSampleReturn();
 					
 					//end of period value
-					simResult = (1+r)*simResult;
+					simResult = (1+ret)*simResult;
 					
 					//adjust for inflation
 					simResult = (1-inflationRate)*simResult;
 				}
 				//save result
-				progress.get(p).saveSimulationResult(simResult);
+				progress.get(portfolio).saveSimulationResult(simResult);
 			}
 		}
 		
 		//update portfolios at end of simulations
-		for (Portfolio p : portfolios) {
-			SimulatorState simulatorState = progress.get(p);
-			p.setSimulationMedian(simulatorState.getPercentile(50));
-			p.setSimulationBottom10(simulatorState.getPercentile(10));
-			p.setSimulationTop10(simulatorState.getPercentile(90));
+		for (Portfolio portfolio : portfolios) {
+			SimulatorState simulatorState = progress.get(portfolio);
+			portfolio.setSimulationMedian(simulatorState.getPercentile(50));
+			portfolio.setSimulationLast10(simulatorState.getPercentile(10));
+			portfolio.setSimulationTop10(simulatorState.getPercentile(90));
 		}
 	}
 
-	public double getInflationRate() {
-		return inflationRate;
-	}
-
-	public void setInflationRate(double inflationRate) {
-		this.inflationRate = inflationRate;
-	}
-
-	public long getSimulations() {
-		return simulations;
-	}
-
-	public void setSimulations(long simulations) {
-		this.simulations = simulations;
-	}
-
-	public int getPeriods() {
-		return periods;
-	}
-
-	public void setPeriods(int periods) {
-		this.periods = periods;
-	}
 
 	//internal class to save state during a simulation run
 	private class SimulatorState{
