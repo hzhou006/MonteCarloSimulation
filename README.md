@@ -7,6 +7,7 @@ A Real Time implementation of Modern Portfolio Theory is to build an optimal ass
 Portfolio Type                Return (Mean)                Risk ( Standard Deviation)
 Aggressive                      % 9.4324                         15.675
 Very Conservative               % 6.189                           6.3438
+
  
 We would now like to compare their performance against each other. We would like to know that if a user with $100,000 invested their money in either of them, how would the returns compare over the next 20 years. We would like to test their performance by using forward-looking Monte Carlo Simulations.
  
@@ -19,15 +20,14 @@ Assumptions
 
 Solution Needed
 
-Portfolio Type                   Median 20th Year          10 % Best Case          10 % Worst Case
+Portfolio Type                      Median 20th Year              10 % Best Case               10 % Worst Case
 A - Aggressive 
-
 I - Very Conservative
  
 
 Description
-10% Best Case:   90th Percentile value among the 10,000 simulations
-10% Worst Case:  10th Percentile value among the 10,000 simulations.
+10% Best Case:90th Percentile value among the 10,000 simulations
+10% Worst Case:10th Percentile value among the 10,000 simulations.
  
 Hint
 To test your results create an account with Personal Capital, add a manual portfolio and go to Investment Checkup and compare your results.  
@@ -35,7 +35,7 @@ To test your results create an account with Personal Capital, add a manual portf
 -----------------------------------------------------------------------------------------------------------------------------------
 
 How to run:
-$mvn package
+$mvn test
 
 Get the testing result:
 Portfolio [Name=Aggressive, InitialInvestment=100000.0, Return=0.094324, Risk=0.15675, MedianOf20thYear=242114.86325234303, 10% Best=559835.5344529611, 10% Worst=102614.68956786046]
