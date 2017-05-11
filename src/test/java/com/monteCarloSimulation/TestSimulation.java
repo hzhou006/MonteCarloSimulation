@@ -17,7 +17,6 @@ public class TestSimulation {
         Portfolio aggressive = new Portfolio("Aggressive", 100000, 0.0, 0.0);
         Portfolio conservative = new Portfolio("Very Conservative", 100000, 0.0, 0.0);
         Portfolio[] portfolios = new Portfolio[]{aggressive,conservative};
-
 		Simulator simulator = new Simulator(portfolios);
 		simulator.run();
 		System.out.println(aggressive);
@@ -30,18 +29,14 @@ public class TestSimulation {
         Portfolio aggressive = new Portfolio("Aggressive", 0, 0.094324, 0.15675);
         Portfolio conservative = new Portfolio("Very Conservative", 0, 0.06189, 0.063438);
         Portfolio[] portfolios = new Portfolio[]{aggressive,conservative};
-
 		Simulator simulator = new Simulator(portfolios);
 		simulator.run();
-
 		System.out.println(aggressive);
 		System.out.println(conservative);
     }
 	@Test
-	public void testSimulation(){
-		
+	public void testSimulation(){	
         System.out.println("-------testing if add muti portfolio------");    
-        
         final Object[][] obj = new Object[][]{
         	{"Aggressive", 100000, 0.094324, 0.15675},
         	{"Very Conservative", 100000, 0.06189, 0.063438}

@@ -17,8 +17,8 @@ public class Portfolio {
 	private double simulationMedian;
 	private double simulationTop10;
 	private double simulationLast10;
-	DecimalFormat percent;
-	DecimalFormat val;	
+	private DecimalFormat percent;
+	private DecimalFormat val;	
 	public Portfolio(String name, double initialInvestment, double mean, double standardDeviation) {
     	this.name=name;
 		this.initialInvestment=initialInvestment;
