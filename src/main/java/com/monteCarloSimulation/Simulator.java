@@ -22,14 +22,12 @@ public class Simulator {
 
 	public Simulator(Portfolio[] portfolios) {
 		this.portfolios = portfolios;
-		
 		//init progress
 		this.progress = new HashMap<Portfolio, Simulator.SimulatorState>(portfolios.length);
 		for(Portfolio portfolio: portfolios){
 			SimulatorState simulatorState = new SimulatorState(portfolio.getMean(), portfolio.getStandardDeviation());
 			progress.put(portfolio, simulatorState);
 		}
-
 		// defaults
 		this.inflationRate = 0.035;// inflation rate of 3.5%
 		this.periods = 20;//20 years 
@@ -37,18 +35,26 @@ public class Simulator {
 	}
 
 	public void run() {
-		for (int i = 0; i < simulations; i++) {
+		if(simulations <= 0 || periods <= 0 || inflationRate <= 0) return;
+		setSimulations(simulations);
+		setPeriods(periods);
+		setInflationRate(inflationRate);
+		for (int i = 0; i < getSimulations(); i++) {
 			for (Portfolio portfolio : portfolios) {
 				double simResult=portfolio.getInitialInvestment();//starting value
-				for(int j=0;j<periods;j++){
+				double mean = portfolio.getMean();
+				double standardDeviation = portfolio.getStandardDeviation();
+				if( mean <= 0 || standardDeviation <= 0 || simResult <= 0) return;
+
+				for(int j=0;j<getPeriods();j++){
 					//get next random sample return for the portfolio
 					double ret = progress.get(portfolio).nextSampleReturn();
 					
-					//end of period value
-					simResult = (1+ret)*simResult;
+					//each year of value
+					simResult = (ret/100+1)*simResult;
 					
 					//adjust for inflation
-					simResult = (1-inflationRate)*simResult;
+					simResult = (1-getInflationRate())*simResult;
 				}
 				//save result
 				progress.get(portfolio).saveSimulationResult(simResult);
@@ -75,13 +81,14 @@ public class Simulator {
 		public SimulatorState(double mean, double standardDeviation) {
 			//init distribution for sampling
 			//using default Randomizer
+			if(mean <= 0 || standardDeviation <= 0) return;
 			this.normalDistribution = new NormalDistribution(mean, standardDeviation);
 			
 			//to store results and compute percentiles
 			this.stats = new DescriptiveStatistics();
 		}
 
-		public void saveSimulationResult(double simResult) {
+		public void saveSimulationResult(double simResult) { 
 			this.stats.addValue(simResult);
 		}
 
@@ -93,4 +100,28 @@ public class Simulator {
 			return this.stats.getPercentile(n);
 		}
 	}
+	public double getInflationRate() {
+		return inflationRate;
+	}
+
+	public void setInflationRate(double inflationRate) {
+		this.inflationRate = inflationRate;
+	}
+
+	public long getSimulations() {
+		return simulations;
+	}
+
+	public void setSimulations(long simulations) {
+		this.simulations = simulations;
+	}
+
+	public int getPeriods() {
+		return periods;
+	}
+
+	public void setPeriods(int periods) {
+		this.periods = periods;
+	}
+
 }

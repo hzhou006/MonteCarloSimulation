@@ -1,5 +1,7 @@
 package com.monteCarloSimulation;
 
+import java.text.DecimalFormat;
+
 /**
  * A portfolio
  * @author Kenny
@@ -15,14 +17,16 @@ public class Portfolio {
 	private double simulationMedian;
 	private double simulationTop10;
 	private double simulationLast10;
-		
+	DecimalFormat percent;
+	DecimalFormat val;	
 	public Portfolio(String name, double initialInvestment, double mean, double standardDeviation) {
-		this.name=name;
+    	this.name=name;
 		this.initialInvestment=initialInvestment;
 		this.mean=mean;
-		this.standardDeviation=standardDeviation;		
-	}  
-
+		this.standardDeviation=standardDeviation;	
+		this.percent = new DecimalFormat("##.##%");
+		this.val = new DecimalFormat("##.##");
+    }
 	public String getName() {
 		return name;
 	}
@@ -39,11 +43,11 @@ public class Portfolio {
 		this.initialInvestment = initialInvestment;
 	}
 
-	public double getMean() {
+	public Double getMean() {
 		return mean;
 	}
 
-	public void setMean(double mean) {
+	public void setMean(Double mean) {
 		this.mean = mean;
 	}
 
@@ -82,10 +86,10 @@ public class Portfolio {
 	@Override
 	public String toString() {
 		return "Portfolio [Name=" + name + ", InitialInvestment="
-				+ initialInvestment + ", Return=" + mean + ", Risk="
-				+ standardDeviation + ", MedianOf20thYear=" + simulationMedian
-				+ ", 10% Best=" + simulationTop10
-				+ ", 10% Worst=" + simulationLast10 + "]";
+				+ val.format(initialInvestment) + ", Return=" + percent.format(mean) + ", Risk="
+				+ percent.format(standardDeviation) + ", MedianOf20thYear=" + val.format(simulationMedian)
+				+ ", 10% Best=" + val.format(simulationTop10)
+				+ ", 10% Worst=" + val.format(simulationLast10) + "]";
 	}
 	
 }
