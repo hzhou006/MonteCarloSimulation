@@ -38,7 +38,14 @@ How to run:
 $mvn test
 
 Get the testing result:
-Portfolio [Name=Aggressive, InitialInvestment=100000.0, Return=0.094324, Risk=0.15675, MedianOf20thYear=242114.86325234303, 10% Best=559835.5344529611, 10% Worst=102614.68956786046]
-Portfolio [Name=Very Conservative, InitialInvestment=100000.0, Return=0.06189, Risk=0.063438, MedianOf20thYear=158333.42806429684, 10% Best=222479.69815420982, 10% Worst=111750.0225855101]
+-------testing if add muti portfolio------
+Portfolio [Name=Aggressive, InitialInvestment=100000, Return=9.43%, Risk=15.68%, MedianOf20thYear=49973.6, 10% Best=50424.74, 10% Worst=49525.97]
+Portfolio [Name=Very Conservative, InitialInvestment=100000, Return=6.19%, Risk=6.34%, MedianOf20thYear=49652.42, 10% Best=49829.55, 10% Worst=49465.02]
+-------testing error check if the investment is invalid------
+Portfolio [Name=Aggressive, InitialInvestment=0, Return=9.43%, Risk=15.68%, MedianOf20thYear=0, 10% Best=0, 10% Worst=0]
+Portfolio [Name=Very Conservative, InitialInvestment=0, Return=6.19%, Risk=6.34%, MedianOf20thYear=0, 10% Best=0, 10% Worst=0]
+-------testing error check if return or mean is invalid------
+Portfolio [Name=Aggressive, InitialInvestment=100000, Return=0%, Risk=0%, MedianOf20thYear=0, 10% Best=0, 10% Worst=0]
+Portfolio [Name=Very Conservative, InitialInvestment=100000, Return=0%, Risk=0%, MedianOf20thYear=0, 10% Best=0, 10% Worst=0]
 
 Running for each time have diff results for median, 10% Best, 10% Worst
