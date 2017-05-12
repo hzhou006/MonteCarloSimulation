@@ -5,7 +5,9 @@ Modern Portfolio Theory says that it is not enough to look at the expected risk 
 A Real Time implementation of Modern Portfolio Theory is to build an optimal asset allocation of domestic stocks & bonds, international stock and bonds, alternatives and cash. Combining the risk & return of each asset class and correlations across them – we come up with the risk and return of the overall portfolio.  Two portfolios were created, one being extremely Conservative and one being Aggressive.
  
 Portfolio Type                Return (Mean)                Risk ( Standard Deviation)
+
 Aggressive                      % 9.4324                         15.675
+
 Very Conservative               % 6.189                           6.3438
 
  
@@ -21,7 +23,9 @@ Assumptions
 Solution Needed
 
 Portfolio Type                      Median 20th Year              10 % Best Case               10 % Worst Case
+
 A - Aggressive 
+
 I - Very Conservative
  
 
