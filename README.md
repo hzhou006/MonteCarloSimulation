@@ -42,16 +42,21 @@ Get the testing result:
 -------testing if add muti portfolio------
 
 Portfolio [Name=Aggressive, InitialInvestment=100000, Return=9.43%, Risk=15.68%, MedianOf20thYear=49973.6, 10% Best=50424.74, 10% Worst=49525.97]
+
 Portfolio [Name=Very Conservative, InitialInvestment=100000, Return=6.19%, Risk=6.34%, MedianOf20thYear=49652.42, 10% Best=49829.55, 10% Worst=49465.02]
+
 
 -------testing error check if the investment is invalid------
 
 Portfolio [Name=Aggressive, InitialInvestment=0, Return=9.43%, Risk=15.68%, MedianOf20thYear=0, 10% Best=0, 10% Worst=0]
+
 Portfolio [Name=Very Conservative, InitialInvestment=0, Return=6.19%, Risk=6.34%, MedianOf20thYear=0, 10% Best=0, 10% Worst=0]
+
 
 -------testing error check if return or mean is invalid------
 
 Portfolio [Name=Aggressive, InitialInvestment=100000, Return=0%, Risk=0%, MedianOf20thYear=0, 10% Best=0, 10% Worst=0]
+
 Portfolio [Name=Very Conservative, InitialInvestment=100000, Return=0%, Risk=0%, MedianOf20thYear=0, 10% Best=0, 10% Worst=0]
 
 Running for each time have diff results for median, 10% Best, 10% Worst
