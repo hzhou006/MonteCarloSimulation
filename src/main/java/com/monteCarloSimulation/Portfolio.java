@@ -20,13 +20,13 @@ public class Portfolio {
 	private DecimalFormat percent;
 	private DecimalFormat val;	
 	public Portfolio(String name, double initialInvestment, double mean, double standardDeviation) {
-    	this.name=name;
+    	        this.name=name;
 		this.initialInvestment=initialInvestment;
 		this.mean=mean;
 		this.standardDeviation=standardDeviation;	
 		this.percent = new DecimalFormat("##.##%");
 		this.val = new DecimalFormat("##.##");
-    }
+        }
 	public String getName() {
 		return name;
 	}
